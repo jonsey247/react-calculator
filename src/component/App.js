@@ -15,7 +15,7 @@ class App extends React.Component {
         };
         this.addNumber = this.addNumber.bind(this);
         this.addOperator = this.addOperator.bind(this);
-        this.resetState = this.resetState.bind(this);
+        
     }
     render() {
         return (
@@ -23,21 +23,12 @@ class App extends React.Component {
                 <Display leftNumber={this.state.leftNumber} operator={this.state.operator} rightNumber={this.state.rightNumber} />
                 <NumberButton addNumber={this.addNumber} />
                 <OperationsButton addOperator={this.addOperator} />
+                
             </div>
         );
     }
 
-    resetState(event) {
-        const ButtonValue = event.target.innerText
-        if (ButtonValue === 'AC') {
-            this.setState({
-                leftNumber: 0,
-                operator: '',
-                rightNumber: ''
-            });
-        }
-
-    }
+    
     // clickHandler (event)  { 
     //     const ButtonValue = event.target.innerText;
     //     if (ButtonValue === event.target.name) {
@@ -65,9 +56,18 @@ class App extends React.Component {
 
     addOperator(event) {
         const value = event.target.innerText;
+        if(value === 'AC') {
+            this.setState({
+                leftNumber: 0,
+                operator: '',
+                rightNumber: ''
+            })
+        } else {
+
         this.setState({
             operator: value
         })
+        }
     }
 }
 

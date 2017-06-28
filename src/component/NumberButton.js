@@ -12,7 +12,6 @@ class NumberButtons extends React.Component {
    
     
     render() {
-    console.log(this.state);
         return (
         <div>
            {buttonValues.map((row, i) => {

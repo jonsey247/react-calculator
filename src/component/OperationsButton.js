@@ -3,16 +3,15 @@ import Buttons from './Buttons';
 
 const buttonValues = [
     ['+','-','x','/','AC'],
-    [],
+    ['='],
     [],
     []
 ]
 
-class OperastionsButton extends React.Component {
+class OperationsButton extends React.Component {
    
     
     render() {
-    console.log(this.state);
         return (
         <div>
            {buttonValues.map((row, i) => {
@@ -34,4 +33,4 @@ class OperastionsButton extends React.Component {
 
 }
 
-export default OperastionsButton
+export default OperationsButton
